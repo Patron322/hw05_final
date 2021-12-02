@@ -39,9 +39,14 @@ def profile(request, username):
     page_obj = paginator.get_page(page_number)
     try:
         following = Follow.objects.get(user=request.user, author=author)
-    except Follow.DoesNotExist:
-        print('Error follow')
+    except Follow.DoesNotExist as er:
+        print(f'Error follow {er}')
         following = False
+    except TypeError as er:
+        print(f'Error follow {er}')
+        following = False
+    except Exception as e:
+        print(f'Непонятная ошибка с Follow под номером{e}')
     context = {
         'following': following,
         'author': author,
