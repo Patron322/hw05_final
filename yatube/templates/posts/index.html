@@ -3,6 +3,8 @@
 {% block content %}
   <p>Последние обновления на сайте</p>
   {% include 'posts/includes/switcher.html' %}
+  {% load cache %}
+  {% cache 20 index_page %}
   {% for post in page_obj %}
   {% include 'posts/includes/post_list.html' %}
     {% if post.group %}   
@@ -10,5 +12,6 @@
     {% endif %}
     {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
+  {% endcache index_page %}
   {% include 'posts/includes/paginator.html' %}
 {% endblock %} 
