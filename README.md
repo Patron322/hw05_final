@@ -1,3 +1,14 @@
-# hw05_final
+Как запустить проект:
 
-[![CI](https://github.com/yandex-praktikum/hw05_final/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/yandex-praktikum/hw05_final/actions/workflows/python-app.yml)
+Cоздать и активировать виртуальное окружение:
+    python -m venv venv
+    .\venv\Scripts\Activate.ps1
+
+Установить зависимости из файла requirements.txt:
+
+    python -m pip install —upgrade pip
+    pip install -r requirements.txt
+
+Yatube. Сайт-блог с возможностью публиковать посты. Реализована система подписок на авторов и возможность оставлять комментарии к постам.
+Стек: Python3, Django, PostgreSQL, gunicorn, nginx, Яндекс.Облако(Ubuntu 20.04).
+Используется пагинация постов и кэширование. Регистрация реализована с верификацией данных, сменой и восстановлением пароля через почту.
